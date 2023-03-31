@@ -7,9 +7,14 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: auto 1fr auto;
 
+    min-height: 100vh;
+    min-height: 100svh;
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    overflow: hidden;
 }
 
 header {
@@ -21,13 +26,6 @@ header {
     box-shadow: 0 0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
     background-color: red;
     color: white;
-
-}
-
-header {
-    margin: 0;
-    padding: 0;
-
 }
 
 header ul {
@@ -65,6 +63,14 @@ header nav .logo>* {
     padding: 0.25rem;
 }
 
+header nav .logo {
+    transition: background-color 0.25s ease-in-out;
+}
+
+header nav .logo:hover {
+    background-color: coral;
+}
+
 header nav .logo img {
     margin-right: 0.25rem;
     max-width: 2.5rem;
@@ -93,26 +99,26 @@ header nav .menu ul li {
     justify-content: center;
     align-items: center;
 
+    box-shadow: 0 0rem 0 transparent;
     background-color: red;
     border-radius: 0.25rem;
-    box-shadow: 0 0rem 0 transparent;
 
     transform-origin: center;
     transition:
+        box-shadow 0.25s ease-in-out,
         background-color 0.25s ease-in-out,
-        transform 0.25s ease-in-out,
-        box-shadow 0.25s ease-in-out;
+        transform 0.25s ease-in-out;
 }
 
 header nav .menu ul li:hover {
+    box-shadow: 0 0.125rem 0 black;
     background-color: coral;
     transform: translateY(-0.125rem);
-    box-shadow: 0 0.125rem 0 black;
 }
 
 header nav .menu ul li:active {
-    transform: translateY(0);
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) inset;
+    transform: translateY(0);
 }
 
 header nav .menu ul li:first-child {
@@ -134,9 +140,11 @@ header nav .user-menu {
 header nav .user-menu>button {
     display: flex;
     align-items: center;
+
     margin: 0;
     padding: 0.25rem;
     border: none;
+
     background-color: transparent;
     color: white;
 }
@@ -147,9 +155,11 @@ header nav .user-menu.shown, header nav .user-menu:hover {
 
 header nav .user-menu>button>img {
     max-width: 2rem;
+
+    margin-left: 0.25rem;
     border-radius: 50%;
     border: 0.0625rem solid black;
-    margin-left: 0.25rem;
+
     background-color: red;
 }
 
@@ -183,6 +193,7 @@ header nav .user-menu>ul {
 
 header nav .user-menu ul.shown {
     display: flex;
+
     box-shadow: 0 0.125rem 0 black, 0rem 0.75rem 1rem -0.5rem rgba(0, 0, 0, 0.25);
     transform: scaleY(100%);
     opacity: 1;
@@ -194,8 +205,10 @@ header nav .user-menu ul.shown {
 header nav .user-menu ul li {
     margin: 0.25rem 0.5rem 0.25rem 0.5rem;
     padding: 0.5rem;
+
     text-align: center;
     border-radius: 0.25rem;
+
     background-color: red;
 }
 
@@ -205,4 +218,33 @@ header nav .user-menu ul li:first-child {
 
 header nav .user-menu ul li:last-child {
     margin-bottom: 0.5rem;
+}
+
+/* Main */
+main {
+    grid-area: mid;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+    padding: 0.5rem;
+
+    box-shadow: -0.125rem 0 0 black, 0.125rem 0 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
+    background-color: aliceblue;
+
+    z-index: -1;
+}
+
+/* Footer */
+footer {
+    grid-area: bot;
+
+    margin: 0;
+    padding: 0.25rem;
+    text-align: center;
+
+    box-shadow: 0 -0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
+    background-color: red;
+    color: white;
 }
