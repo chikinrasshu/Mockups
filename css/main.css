@@ -1,0 +1,208 @@
+body {
+    display: grid;
+    grid-template-areas:
+        "top top top"
+        "lft mid rgt"
+        "bot bot bot";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto 1fr auto;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    grid-area: top;
+
+    margin: 0;
+    padding: 0;
+
+    box-shadow: 0 0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
+    background-color: red;
+    color: white;
+
+}
+
+header {
+    margin: 0;
+    padding: 0;
+
+}
+
+header ul {
+    list-style: none;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Logo | Menu | User Menu */
+header nav>ul {
+    flex: 1;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo */
+header nav .logo>* {
+    display: flex;
+
+    justify-items: center;
+    align-items: center;
+
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+
+    margin-left: 0.25rem;
+    padding: 0.25rem;
+}
+
+header nav .logo img {
+    margin-right: 0.25rem;
+    max-width: 2.5rem;
+    height: auto;
+}
+
+/* Menu */
+header nav .menu {
+    display: flex;
+}
+
+header nav .menu ul {
+    display: flex;
+
+    margin: 0;
+    padding: 0.5rem;
+}
+
+header nav .menu ul li {
+    display: flex;
+    padding: 0.25rem;
+
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+
+    justify-content: center;
+    align-items: center;
+
+    background-color: red;
+    border-radius: 0.25rem;
+    box-shadow: 0 0rem 0 transparent;
+
+    transform-origin: center;
+    transition:
+        background-color 0.25s ease-in-out,
+        transform 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out;
+}
+
+header nav .menu ul li:hover {
+    background-color: coral;
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.125rem 0 black;
+}
+
+header nav .menu ul li:active {
+    transform: translateY(0);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) inset;
+}
+
+header nav .menu ul li:first-child {
+    margin-left: 0;
+}
+
+header nav .menu ul li:last-child {
+    margin-right: 0;
+}
+
+/* User Menu */
+header nav .user-menu {
+    position: relative;
+    display: flex;
+
+    transition: background-color 0.25s ease-in-out;
+}
+
+header nav .user-menu>button {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0.25rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+header nav .user-menu.shown, header nav .user-menu:hover {
+    background-color: coral;
+}
+
+header nav .user-menu>button>img {
+    max-width: 2rem;
+    border-radius: 50%;
+    border: 0.0625rem solid black;
+    margin-left: 0.25rem;
+    background-color: red;
+}
+
+header nav .user-menu>ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    top: 100%;
+    right: 0;
+    min-width: min(12rem, 50vw);
+    margin: 0;
+    padding: 0;
+
+    background-color: coral;
+    color: white;
+    box-shadow: 0rem 0.75rem 1rem -0.5rem rgba(0, 0, 0, 0);
+    border-bottom-left-radius: 0.5rem;
+
+    transform-origin: 50% 0%;
+    transform: scaleY(0%);
+    opacity: 0;
+    transition:
+        box-shadow 0.25s ease-in-out,
+        transform 0.25s ease-in-out,
+        opacity 0.25s ease-in-out;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+header nav .user-menu ul.shown {
+    display: flex;
+    box-shadow: 0 0.125rem 0 black, 0rem 0.75rem 1rem -0.5rem rgba(0, 0, 0, 0.25);
+    transform: scaleY(100%);
+    opacity: 1;
+
+    user-select: inherit;
+    pointer-events: inherit;
+}
+
+header nav .user-menu ul li {
+    margin: 0.25rem 0.5rem 0.25rem 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 0.25rem;
+    background-color: red;
+}
+
+header nav .user-menu ul li:first-child {
+    margin-top: 0.5rem;
+}
+
+header nav .user-menu ul li:last-child {
+    margin-bottom: 0.5rem;
+}
