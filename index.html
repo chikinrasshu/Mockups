@@ -52,21 +52,68 @@
     <main>
         Contents!
         <br>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque corporis quos facere blanditiis praesentium
-        perferendis, ex possimus quo explicabo laborum atque reiciendis placeat consectetur quis fugit aspernatur sed
-        expedita. Praesentium, magni? Amet sunt corrupti sequi eum harum dolores omnis assumenda accusantium aliquid
-        neque voluptate, odio iste commodi placeat repellat voluptates perspiciatis. Necessitatibus, ipsam sed? Aliquid
-        natus atque esse voluptatibus maiores rerum voluptatum quos, optio officiis delectus dolorum, molestiae nemo
-        earum. Eum beatae provident nesciunt exercitationem, eligendi nihil consequuntur ullam! Molestias accusamus
-        culpa earum sint. Architecto cum repellat illo quisquam vel provident doloribus dolorum? Earum eaque incidunt
-        quidem quod modi mollitia optio molestias quasi qui dolor, illum commodi eius esse ducimus necessitatibus iure a
-        eum doloribus recusandae voluptate perspiciatis soluta molestiae unde? Animi accusantium ut quidem unde omnis
-        consequuntur reprehenderit dolores temporibus, magnam repellendus possimus aliquid inventore minus aperiam sit
-        praesentium nam. Vel adipisci magnam ad animi ipsam praesentium nulla odit aut maxime deserunt ducimus dolorum
-        perspiciatis nesciunt illo ratione est, sint, cupiditate delectus optio eos labore quam quae beatae voluptatum!
-        Nobis blanditiis eveniet consequuntur quisquam nisi voluptatem mollitia repellendus vitae sit reiciendis.
-        Dolorem, dolor aut. Id eum adipisci dolores quae ipsa voluptatem vero quis aperiam enim, laborum nesciunt
-        assumenda dignissimos?
+
+        <!-- Register Form -->
+        <form novalidate>
+            <h2>Registro</h2>
+            <div class="shadow"></div>
+
+            <div class="pair">
+                <input type="text" id="user" required="required">
+                <label for="user">Nombre de Usuario</label>
+            </div>
+            <div class="pair">
+                <input type="text" id="mail" required="required">
+                <label for="mail">Direccion de Correo</label>
+            </div>
+            <div class="pair">
+                <input type="password" id="pass1" required="required">
+                <label for="pass1">Contraseña</label>
+            </div>
+            <div class="pair">
+                <input type="password" id="pass2" required="required">
+                <label for="pass2">Repetir Contraseña</label>
+            </div>
+
+            <div class="pair">
+                <label class="checkbox-pair">
+                    <span>Acepto los <a href="https://google.com">TyC</a></span>
+                    <input type="checkbox" checked="checked">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+
+            <button type="submit">Registrar Cuenta</button>
+        </form>
+        <!-- End of Register Form -->
+
+        <!-- Login Form -->
+        <form novalidate>
+            <h2>Inicio de Sesion</h2>
+            <div class="shadow"></div>
+
+            <div class="pair">
+                <input type="text" id="user" required="required">
+                <label for="user">Nombre de Usuario</label>
+            </div>
+            <div class="pair">
+                <input type="password" id="pass1" required="required">
+                <label for="pass1">Contraseña</label>
+            </div>
+
+            <div class="pair">
+                <label class="checkbox-pair">
+                    <span>Recuerdame</span>
+                    <input type="checkbox" checked="checked">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+
+            <button type="submit">Iniciar Sesion</button>
+        </form>
+        <!-- End of Register Form -->
+
+
     </main>
 
     <!-- Footer -->

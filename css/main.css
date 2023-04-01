@@ -14,6 +14,8 @@ body {
     padding: 0;
     box-sizing: border-box;
 
+    font-family: Arial, Helvetica, sans-serif;
+
     overflow: hidden;
 }
 
@@ -26,6 +28,8 @@ header {
     box-shadow: 0 0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
     background-color: red;
     color: white;
+
+    z-index: 1;
 }
 
 header ul {
@@ -232,8 +236,177 @@ main {
 
     box-shadow: -0.125rem 0 0 black, 0.125rem 0 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
     background-color: aliceblue;
+}
 
-    z-index: -1;
+form {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 0.125rem solid black;
+    border-radius: 1rem;
+    width: 30rem;
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+
+    background-color: white;
+    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+}
+
+form h2 {
+    text-align: center;
+    margin: none;
+    padding: none;
+}
+
+form .shadow {
+    border: none;
+    height: 2rem;
+    width: 90%;
+    height: 3rem;
+    margin-top: 0;
+    box-shadow: 0 1rem 1.5rem -1.4rem rgba(0, 0, 0, 0.5);
+    margin: -3rem auto 2rem;
+}
+
+form .pair {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    width: 75%;
+
+    margin: 0.25rem;
+}
+
+form input {
+    flex: 1;
+    border: 0.125rem solid black;
+    border-radius: 0.5rem;
+    padding: 1.0rem 1.25rem 0.5rem 1.25rem;
+
+    background-color: white;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25) inset;
+}
+
+form input[type="text"]~label, form input[type="password"]~label {
+    position: absolute;
+
+    inset: 0;
+    transform: translateY(25%) translateX(1.25rem);
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+}
+
+form input[type="text"]:focus~label, form input[type="text"]:valid~label,
+form input[type="password"]:focus~label, form input[type="password"]:valid~label {
+    transform: translateY(2.5%) translateX(5%);
+    font-size: .75rem;
+    color: crimson;
+}
+
+form button:last-child {
+    width: 100%;
+    min-height: 3rem;
+    margin-top: 1.5rem;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 1.25rem;
+
+    transition:
+        box-shadow 0.25s ease-in-out,
+        color 0.25s ease-in-out,
+        background-color 0.25s ease-in-out;
+}
+
+form button:hover {
+    background-color: crimson;
+    color: #ddd;
+}
+
+form button:active {
+    background-color: firebrick;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25) inset;
+    color: #bbb;
+}
+
+/* Custom checkbox */
+form .checkbox-pair {
+    position: relative;
+    display: flex;
+
+    flex: 1;
+    align-items: center;
+
+    padding-left: 2.5rem;
+    min-height: 2rem;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+form .checkbox-pair input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    inset: 0;
+}
+
+form .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    transform: translateY(-50%);
+
+    border: 0.125rem solid black;
+    border-radius: 0.5rem;
+
+    background-color: white;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25) inset;
+    transition: background-color 0.25s ease-in-out;
+}
+
+form .checkbox-pair:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+form .checkbox-pair input:checked~.checkmark {
+    background-color: #2195f35a;
+}
+
+form .checkmark:after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+form .checkbox-pair input:checked~.checkmark:after {
+    opacity: 1;
+}
+
+form .checkbox-pair .checkmark:after {
+    left: 0.4rem;
+    top: 0.05rem;
+    width: 0.5rem;
+    height: 0.9rem;
+    border: solid black;
+    border-width: 0 0.125rem 0.125rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /* Footer */
