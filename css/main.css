@@ -1,3 +1,18 @@
+:root {
+    --nav-back-bgcolor: rgb(109, 151, 190);
+    --nav-back-fgcolor: rgb(243, 243, 243);
+    --nav-back-bgcolor-dark: rgb(80, 121, 158);
+    --nav-back-fgcolor-dark: rgb(219, 219, 219);
+
+    --nav-main-bgcolor: rgb(100, 127, 151);
+    --nav-main-fgcolor: rgb(206, 214, 221);
+    --btn-back-bgcolor: var(--nav-back-bgcolor);
+    --btn-back-fgcolor: var(--nav-back-fgcolor);
+
+    --main-bgcolor: rgb(219, 230, 240);
+    --main-color: rgb(58, 63, 68);
+}
+
 body {
     display: grid;
     grid-template-areas:
@@ -16,7 +31,25 @@ body {
 
     font-family: Arial, Helvetica, sans-serif;
 
+    background-color: #80807f;
+    background-image: url(../img/canvas.jpg);
+
     overflow: hidden;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.shadow {
+    border: none;
+    height: 2rem;
+    width: 90%;
+    height: 3rem;
+    margin-top: 0;
+    box-shadow: 0 1rem 1.5rem -1.4rem rgba(0, 0, 0, 0.5);
+    margin: -3rem auto 2rem;
 }
 
 header {
@@ -26,8 +59,8 @@ header {
     padding: 0;
 
     box-shadow: 0 0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
-    background-color: red;
-    color: white;
+    background-color: var(--nav-back-bgcolor);
+    color: var(--nav-back-fgcolor);
 
     z-index: 1;
 }
@@ -68,11 +101,12 @@ header nav .logo>* {
 }
 
 header nav .logo {
-    transition: background-color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out;
 }
 
 header nav .logo:hover {
-    background-color: coral;
+    background-color: var(--nav-main-bgcolor);
+    color: var(--nav-main-fgcolor);
 }
 
 header nav .logo img {
@@ -103,25 +137,35 @@ header nav .menu ul li {
     justify-content: center;
     align-items: center;
 
-    box-shadow: 0 0rem 0 transparent;
-    background-color: red;
+    box-shadow: 0 0rem 0 transparent, 0 0rem 0 transparent;
+    background-color: var(--nav-back-bgcolor);
+    color: var(--nav-back-fgcolor);
     border-radius: 0.25rem;
 
     transform-origin: center;
     transition:
         box-shadow 0.25s ease-in-out,
+        color 0.25s ease-in-out,
         background-color 0.25s ease-in-out,
         transform 0.25s ease-in-out;
 }
 
 header nav .menu ul li:hover {
-    box-shadow: 0 0.125rem 0 black;
-    background-color: coral;
+    box-shadow:
+        0 0 0 transparent inset,
+        0 0.125rem 0 black,
+        0 0.125rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
+    background-color: var(--nav-main-bgcolor);
+    color: var(--nav-main-fgcolor);
     transform: translateY(-0.125rem);
 }
 
 header nav .menu ul li:active {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) inset;
+    background-color: var(--nav-back-bgcolor-dark);
+    color: var(--nav-back-fgcolor-dark);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) inset,
+        0 0 0 transparent,
+        0 0 0 transparent;
     transform: translateY(0);
 }
 
@@ -150,11 +194,11 @@ header nav .user-menu>button {
     border: none;
 
     background-color: transparent;
-    color: white;
+    color: var(--nav-main-fgcolor);
 }
 
 header nav .user-menu.shown, header nav .user-menu:hover {
-    background-color: coral;
+    background-color: var(--nav-main-bgcolor);
 }
 
 header nav .user-menu>button>img {
@@ -164,7 +208,7 @@ header nav .user-menu>button>img {
     border-radius: 50%;
     border: 0.0625rem solid black;
 
-    background-color: red;
+    background-color: var(--nav-back-bgcolor);
 }
 
 header nav .user-menu>ul {
@@ -178,8 +222,8 @@ header nav .user-menu>ul {
     margin: 0;
     padding: 0;
 
-    background-color: coral;
-    color: white;
+    background-color: var(--nav-main-bgcolor);
+    color: var(--nav-main-fgcolor);
     box-shadow: 0rem 0.75rem 1rem -0.5rem rgba(0, 0, 0, 0);
     border-bottom-left-radius: 0.5rem;
 
@@ -202,8 +246,8 @@ header nav .user-menu ul.shown {
     transform: scaleY(100%);
     opacity: 1;
 
-    user-select: inherit;
-    pointer-events: inherit;
+    user-select: auto;
+    pointer-events: auto;
 }
 
 header nav .user-menu ul li {
@@ -212,8 +256,31 @@ header nav .user-menu ul li {
 
     text-align: center;
     border-radius: 0.25rem;
+    box-shadow: 0 0 0 transparent inset, 0 0 0 transparent, 0 0 0 transparent;
 
-    background-color: red;
+    transition:
+        box-shadow 0.25s ease-in-out,
+        background-color 0.25s ease-in-out,
+        color 0.25s ease-in-out,
+        transform 0.25s ease-in-out;
+}
+
+header nav .user-menu ul li:hover {
+    background-color: var(--nav-back-bgcolor);
+    color: var(--nav-back-fgcolor);
+    box-shadow:
+        0 0 0 transparent inset,
+        0 0.125rem 0 black,
+        0 0.125rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.125rem);
+}
+
+header nav .user-menu ul li:active {
+    background-color: var(--nav-back-bgcolor-dark);
+    color: var(--nav-back-fgcolor-dark);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) inset,
+        0 0 0 transparent,
+        0 0 0 transparent;
 }
 
 header nav .user-menu ul li:first-child {
@@ -235,7 +302,7 @@ main {
     padding: 0.5rem;
 
     box-shadow: -0.125rem 0 0 black, 0.125rem 0 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
-    background-color: aliceblue;
+    background-color: var(--main-bgcolor);
 }
 
 form {
@@ -257,22 +324,18 @@ form {
     overflow: hidden;
 }
 
+/* Add some padding to the end if no submit button */
+form:not(:has(button[type="submit"])) {
+    padding-bottom: 2rem;
+}
+
 form h2 {
     text-align: center;
     margin: none;
     padding: none;
 }
 
-form .shadow {
-    border: none;
-    height: 2rem;
-    width: 90%;
-    height: 3rem;
-    margin-top: 0;
-    box-shadow: 0 1rem 1.5rem -1.4rem rgba(0, 0, 0, 0.5);
-    margin: -3rem auto 2rem;
-}
-
+form .item,
 form .pair {
     display: flex;
     position: relative;
@@ -281,6 +344,80 @@ form .pair {
     width: 75%;
 
     margin: 0.25rem;
+}
+
+form .pair {
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+}
+
+form .pair>* {
+    flex: 1;
+}
+
+form button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+
+    box-shadow:
+        0 0 0 transparent inset,
+        0 0 0 transparent,
+        0 0 0 transparent;
+
+    background-color: var(--nav-back-bgcolor);
+    color: var(--nav-back-fgcolor);
+
+    transform: translateY(0);
+
+    transition:
+        box-shadow 0.25s ease-in-out,
+        color 0.25s ease-in-out,
+        background-color 0.25s ease-in-out,
+        transform 0.25s ease-in-out;
+
+    overflow: hidden;
+}
+
+form button:has(a) {
+    padding: 0;
+}
+
+form button:hover {
+    background-color: var(--nav-main-bgcolor);
+    color: var(--nav-main-fgcolor);
+
+    box-shadow:
+        0 0 0 transparent inset,
+        0 0.125rem 0 black,
+        0 0.125rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
+
+    transform: translateY(-0.125rem);
+}
+
+form button:active {
+    box-shadow:
+        0 0 2rem rgba(0, 0, 0, 0.25) inset,
+        0 0 0 transparent,
+        0 0 0 transparent;
+
+    background-color: var(--nav-back-bgcolor-dark);
+    color: var(--nav-back-fgcolor-dark);
+    transform: translateY(0);
+}
+
+form button a {
+    flex: 1;
+    display: block;
+    background-color: inherit;
+    color: inherit;
+    text-decoration: none;
+
+    padding: 0.5rem;
 }
 
 form input {
@@ -306,17 +443,19 @@ form input[type="text"]:focus~label, form input[type="text"]:valid~label,
 form input[type="password"]:focus~label, form input[type="password"]:valid~label {
     transform: translateY(2.5%) translateX(5%);
     font-size: .75rem;
-    color: crimson;
+    color: var(--nav-back-bgcolor-dark);
 }
 
-form button:last-child {
+form>button:last-child {
     width: 100%;
     min-height: 3rem;
     margin-top: 1.5rem;
     border: none;
-    background-color: red;
-    color: white;
+    background-color: var(--nav-back-bgcolor);
+    color: var(--nav-back-fgcolor);
     font-size: 1.25rem;
+
+    box-shadow: 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
 
     transition:
         box-shadow 0.25s ease-in-out,
@@ -324,19 +463,19 @@ form button:last-child {
         background-color 0.25s ease-in-out;
 }
 
-form button:hover {
-    background-color: crimson;
-    color: #ddd;
+form>button:hover {
+    background-color: var(--nav-main-bgcolor);
+    color: var(--nav-main-fgcolor);
 }
 
-form button:active {
-    background-color: firebrick;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25) inset;
-    color: #bbb;
+form>button:active {
+    background-color: var(--nav-back-bgcolor-dark);
+    color: var(--nav-back-fgcolor-dark);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25) inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
 }
 
 /* Custom checkbox */
-form .checkbox-pair {
+form .checkbox-item {
     position: relative;
     display: flex;
 
@@ -353,7 +492,7 @@ form .checkbox-pair {
     user-select: none;
 }
 
-form .checkbox-pair input {
+form .checkbox-item input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -378,11 +517,11 @@ form .checkmark {
     transition: background-color 0.25s ease-in-out;
 }
 
-form .checkbox-pair:hover input~.checkmark {
+form .checkbox-item:hover input~.checkmark {
     background-color: #ccc;
 }
 
-form .checkbox-pair input:checked~.checkmark {
+form .checkbox-item input:checked~.checkmark {
     background-color: #2195f35a;
 }
 
@@ -393,11 +532,11 @@ form .checkmark:after {
     transition: opacity 0.25s ease-in-out;
 }
 
-form .checkbox-pair input:checked~.checkmark:after {
+form .checkbox-item input:checked~.checkmark:after {
     opacity: 1;
 }
 
-form .checkbox-pair .checkmark:after {
+form .checkbox-item .checkmark:after {
     left: 0.4rem;
     top: 0.05rem;
     width: 0.5rem;
@@ -418,6 +557,6 @@ footer {
     text-align: center;
 
     box-shadow: 0 -0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
-    background-color: red;
-    color: white;
+    background-color: var(--nav-back-bgcolor);
+    color: var(--nav-back-fgcolor);
 }

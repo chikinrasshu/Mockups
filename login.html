@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="red">
-    <title>Index</title>
+    <title>Inicio de Sesion</title>
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="js/chk.js" defer></script>
 </head>
@@ -50,21 +50,33 @@
     <!-- End of Nav Bar -->
 
     <main>
-        <h1>Welcome to {Logo}!</h1>
-        <div class="shadow"></div>
-
-        <!-- Navigation -->
-        <form class="center">
-            <h2>Navegacion</h2>
+        <!-- Register Form -->
+        <form class="center" novalidate>
+            <h2>Inicio de Sesion</h2>
             <div class="shadow"></div>
 
-            <div class="item pair">
-                <button><a href="registro.html">Ir a Registro</a></button>
-                <button><a href="login.html">Ir a Login</a></button>
+            <div class="item">
+                <input type="text" id="user" required="required">
+                <label for="user">Nombre de Usuario</label>
             </div>
-        </form>
-        <!-- End of Navigation -->
+            <div class="item">
+                <input type="password" id="pass1" required="required">
+                <label for="pass1">Contraseña</label>
+            </div>
 
+            <div class="item">
+                <label class="checkbox-item">
+                    <span>Recuerdame</span>
+                    <input type="checkbox" checked="checked">
+                    <div class="checkmark"></div>
+                </label>
+            </div>
+
+            <img src="img/captcha.jpg">
+
+            <button type="submit">Iniciar Sesion</button>
+        </form>
+        <!-- End of Register Form -->
     </main>
 
     <!-- Footer -->
