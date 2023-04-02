@@ -1,6 +1,8 @@
 :root {
     --nav-back-bgcolor: rgb(109, 151, 190);
     --nav-back-fgcolor: rgb(243, 243, 243);
+    --nav-back-bgcolor-light: rgb(134, 169, 202);
+    --nav-back-fgcolor-light: rgb(255, 255, 255);
     --nav-back-bgcolor-dark: rgb(80, 121, 158);
     --nav-back-fgcolor-dark: rgb(219, 219, 219);
 
@@ -10,7 +12,14 @@
     --btn-back-fgcolor: var(--nav-back-fgcolor);
 
     --main-bgcolor: rgb(219, 230, 240);
-    --main-color: rgb(58, 63, 68);
+    --main-fgcolor: rgb(58, 63, 68);
+    --main-bgcolor-light: rgb(232, 236, 240);
+    --main-fgcolor-light: rgb(86, 89, 92);
+    --main-bgcolor-dark: rgb(199, 207, 214);
+    --main-fgcolor-dark: rgb(40, 42, 44);
+
+    --main-bgcolor-red: rgb(224, 55, 78);
+    --main-fgcolor-red: rgb(226, 106, 106);
 }
 
 body {
@@ -22,8 +31,8 @@ body {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: auto 1fr auto;
 
-    min-height: 100vh;
-    min-height: 100svh;
+    height: 100vh;
+    height: 100svh;
 
     margin: 0;
     padding: 0;
@@ -105,8 +114,8 @@ header nav .logo {
 }
 
 header nav .logo:hover {
-    background-color: var(--nav-main-bgcolor);
-    color: var(--nav-main-fgcolor);
+    background-color: var(--nav-back-bgcolor-light);
+    color: var(--nav-back-fgcolor-light);
 }
 
 header nav .logo img {
@@ -155,8 +164,8 @@ header nav .menu ul li:hover {
         0 0 0 transparent inset,
         0 0.125rem 0 black,
         0 0.125rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
-    background-color: var(--nav-main-bgcolor);
-    color: var(--nav-main-fgcolor);
+    background-color: var(--nav-back-bgcolor-light);
+    color: var(--nav-back-fgcolor-light);
     transform: translateY(-0.125rem);
 }
 
@@ -194,11 +203,11 @@ header nav .user-menu>button {
     border: none;
 
     background-color: transparent;
-    color: var(--nav-main-fgcolor);
+    color: var(--nav-back-fgcolor);
 }
 
 header nav .user-menu.shown, header nav .user-menu:hover {
-    background-color: var(--nav-main-bgcolor);
+    background-color: var(--nav-back-bgcolor-light);
 }
 
 header nav .user-menu>button>img {
@@ -206,9 +215,16 @@ header nav .user-menu>button>img {
 
     margin-left: 0.25rem;
     border-radius: 50%;
-    border: 0.0625rem solid black;
 
+
+    border: 0.0625rem solid transparent;
     background-color: var(--nav-back-bgcolor);
+
+    transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
+}
+
+header nav .user-menu.shown>*>img, header nav .user-menu:hover>*>img {
+    border: 0.0625rem solid black;
 }
 
 header nav .user-menu>ul {
@@ -222,8 +238,8 @@ header nav .user-menu>ul {
     margin: 0;
     padding: 0;
 
-    background-color: var(--nav-main-bgcolor);
-    color: var(--nav-main-fgcolor);
+    background-color: var(--nav-back-bgcolor-light);
+    color: var(--nav-back-fgcolor-light);
     box-shadow: 0rem 0.75rem 1rem -0.5rem rgba(0, 0, 0, 0);
     border-bottom-left-radius: 0.5rem;
 
@@ -281,6 +297,7 @@ header nav .user-menu ul li:active {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) inset,
         0 0 0 transparent,
         0 0 0 transparent;
+    transform: translateY(0);
 }
 
 header nav .user-menu ul li:first-child {
@@ -293,6 +310,7 @@ header nav .user-menu ul li:last-child {
 
 /* Main */
 main {
+    position: relative;
     grid-area: mid;
 
     margin-left: auto;
@@ -303,249 +321,8 @@ main {
 
     box-shadow: -0.125rem 0 0 black, 0.125rem 0 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
     background-color: var(--main-bgcolor);
-}
 
-form {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    border: 0.125rem solid black;
-    border-radius: 1rem;
-    width: 30rem;
-    margin: 0.5rem;
-    margin-bottom: 1rem;
-
-    background-color: white;
-    box-shadow: 0 0 5rem rgba(0, 0, 0, 0.25);
-
-    overflow: hidden;
-}
-
-/* Add some padding to the end if no submit button */
-form:not(:has(button[type="submit"])) {
-    padding-bottom: 2rem;
-}
-
-form h2 {
-    text-align: center;
-    margin: none;
-    padding: none;
-}
-
-form .item,
-form .pair {
-    display: flex;
-    position: relative;
-    align-items: center;
-
-    width: 75%;
-
-    margin: 0.25rem;
-}
-
-form .pair {
-    column-gap: 0.5rem;
-    row-gap: 0.5rem;
-}
-
-form .pair>* {
-    flex: 1;
-}
-
-form button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.25rem;
-
-    box-shadow:
-        0 0 0 transparent inset,
-        0 0 0 transparent,
-        0 0 0 transparent;
-
-    background-color: var(--nav-back-bgcolor);
-    color: var(--nav-back-fgcolor);
-
-    transform: translateY(0);
-
-    transition:
-        box-shadow 0.25s ease-in-out,
-        color 0.25s ease-in-out,
-        background-color 0.25s ease-in-out,
-        transform 0.25s ease-in-out;
-
-    overflow: hidden;
-}
-
-form button:has(a) {
-    padding: 0;
-}
-
-form button:hover {
-    background-color: var(--nav-main-bgcolor);
-    color: var(--nav-main-fgcolor);
-
-    box-shadow:
-        0 0 0 transparent inset,
-        0 0.125rem 0 black,
-        0 0.125rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
-
-    transform: translateY(-0.125rem);
-}
-
-form button:active {
-    box-shadow:
-        0 0 2rem rgba(0, 0, 0, 0.25) inset,
-        0 0 0 transparent,
-        0 0 0 transparent;
-
-    background-color: var(--nav-back-bgcolor-dark);
-    color: var(--nav-back-fgcolor-dark);
-    transform: translateY(0);
-}
-
-form button a {
-    flex: 1;
-    display: block;
-    background-color: inherit;
-    color: inherit;
-    text-decoration: none;
-
-    padding: 0.5rem;
-}
-
-form input {
-    flex: 1;
-    border: 0.125rem solid black;
-    border-radius: 0.5rem;
-    padding: 1.0rem 1.25rem 0.5rem 1.25rem;
-
-    background-color: white;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25) inset;
-}
-
-form input[type="text"]~label, form input[type="password"]~label {
-    position: absolute;
-
-    inset: 0;
-    transform: translateY(25%) translateX(1.25rem);
-    pointer-events: none;
-    transition: all 0.25s ease-in-out;
-}
-
-form input[type="text"]:focus~label, form input[type="text"]:valid~label,
-form input[type="password"]:focus~label, form input[type="password"]:valid~label {
-    transform: translateY(2.5%) translateX(5%);
-    font-size: .75rem;
-    color: var(--nav-back-bgcolor-dark);
-}
-
-form>button:last-child {
-    width: 100%;
-    min-height: 3rem;
-    margin-top: 1.5rem;
-    border: none;
-    background-color: var(--nav-back-bgcolor);
-    color: var(--nav-back-fgcolor);
-    font-size: 1.25rem;
-
-    box-shadow: 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
-
-    transition:
-        box-shadow 0.25s ease-in-out,
-        color 0.25s ease-in-out,
-        background-color 0.25s ease-in-out;
-}
-
-form>button:hover {
-    background-color: var(--nav-main-bgcolor);
-    color: var(--nav-main-fgcolor);
-}
-
-form>button:active {
-    background-color: var(--nav-back-bgcolor-dark);
-    color: var(--nav-back-fgcolor-dark);
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.25) inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
-}
-
-/* Custom checkbox */
-form .checkbox-item {
-    position: relative;
-    display: flex;
-
-    flex: 1;
-    align-items: center;
-
-    padding-left: 2.5rem;
-    min-height: 2rem;
-    cursor: pointer;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-form .checkbox-item input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-    inset: 0;
-}
-
-form .checkmark {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    height: 1.5rem;
-    width: 1.5rem;
-    transform: translateY(-50%);
-
-    border: 0.125rem solid black;
-    border-radius: 0.5rem;
-
-    background-color: white;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.25) inset;
-    transition: background-color 0.25s ease-in-out;
-}
-
-form .checkbox-item:hover input~.checkmark {
-    background-color: #ccc;
-}
-
-form .checkbox-item input:checked~.checkmark {
-    background-color: #2195f35a;
-}
-
-form .checkmark:after {
-    content: "";
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.25s ease-in-out;
-}
-
-form .checkbox-item input:checked~.checkmark:after {
-    opacity: 1;
-}
-
-form .checkbox-item .checkmark:after {
-    left: 0.4rem;
-    top: 0.05rem;
-    width: 0.5rem;
-    height: 0.9rem;
-    border: solid black;
-    border-width: 0 0.125rem 0.125rem 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    overflow-y: auto;
 }
 
 /* Footer */

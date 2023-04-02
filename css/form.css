@@ -1,0 +1,222 @@
+main>form {
+    width: 30rem;
+}
+
+form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 0.125rem solid black;
+    border-radius: 1rem;
+    width: 30rem;
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+
+    background-color: var(--main-bgcolor-light);
+    color: var(--main-fgcolor-light);
+
+    box-shadow: 0 -1rem 2rem -1rem rgba(0, 0, 0, 0.25) inset;
+
+    overflow: hidden;
+}
+
+form:not(:has(button[type="submit"])) {
+    padding-bottom: 2rem;
+}
+
+form .item, form .group {
+    position: relative;
+    display: flex;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+}
+
+form>.item, form>.group {
+    width: 60%;
+}
+
+form a {
+    flex: 1;
+    display: block;
+    text-decoration: none;
+    background-color: transparent;
+    color: inherit;
+    padding: 0.5rem;
+}
+
+form .item>input, form .item>button, form .item>textarea {
+    flex: 1;
+    background-color: var(--main-bgcolor);
+    color: var(--main-fgcolor);
+    overflow: hidden;
+    border: none;
+    border-radius: 0.25rem;
+    resize: none;
+}
+
+form .item>textarea {
+    overflow-y: auto;
+}
+
+.group-3>.item {
+    width: calc((100% - 1rem)/3);
+}
+
+form button {
+    display: flex;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 0.125rem solid black;
+    border-radius: 0.25rem;
+}
+
+form>button:last-child {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    border: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+
+    background-color: var(--nav-back-bgcolor);
+    color: var(--nav-back-fgcolor);
+
+    box-shadow: 0 0 0 black, 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
+
+    transition:
+        background-color 0.25s ease-in-out,
+        color 0.25s ease-in-out,
+        transform 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out;
+}
+
+form>button:last-child:hover {
+    background-color: var(--nav-back-bgcolor-light);
+    color: var(--nav-back-fgcolor-light);
+    box-shadow: 0 0.125rem 0 black, 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.125rem);
+}
+
+form>button:last-child:active {
+    background-color: var(--nav-back-bgcolor-dark);
+    color: var(--nav-back-fgcolor-dark);
+    box-shadow: 0 0 0 black, 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.125);
+    transform: translateY(0);
+}
+
+
+form button:has(a) {
+    padding: 0;
+}
+
+.item>input, .item>button {
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.item:has(label)>input {
+    padding-top: 1rem;
+}
+
+.item>input+label, .item>textarea+label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    color: var(--main-fgcolor);
+    opacity: 0.5;
+
+    text-shadow:
+        -0.125rem -0.125rem 0.125rem #FFF,
+        0.125rem -0.125rem 0.125rem #FFF,
+        -0.125rem 0.125rem 0.125rem #FFF,
+        0.125rem 0.125rem 0.125rem #FFF;
+
+
+    transition: all 0.25s ease-in-out;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+.item>input:focus+label, .item>input:valid+label,
+.item>textarea:focus+label, .item>textarea:valid+label {
+    opacity: 1;
+    font-size: 60%;
+    top: 0.5rem;
+    text-align: left;
+}
+
+.item input[type="text"],
+.item input[type="email"],
+.item input[type="password"],
+.item textarea {
+    padding: 0.5rem;
+    padding-top: 1rem;
+
+    box-shadow: 0 0.125rem 0 black inset, 0 0 1rem rgba(0, 0, 0, 0.125) inset;
+}
+
+.checkbox-item, .checkbox-item>span {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-item>input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 0.15rem;
+    transform: translateY(-0.075rem);
+    display: grid;
+    place-content: center;
+    margin-right: 0.5rem;
+
+    box-shadow: 0 0.125rem 0 black inset, 0 0 1rem rgba(0, 0, 0, 0.125) inset;
+    background-color: var(--main-bgcolor);
+    color: var(--main-fgcolor);
+
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+.checkbox-item>input[type="checkbox"]:checked {
+    background-color: var(--main-bgcolor-dark);
+}
+
+.checkbox-item>input[type="checkbox"]:disabled {
+    background-color: var(--main-bgcolor-red);
+    cursor: not-allowed;
+}
+
+.checkbox-item>input[type="checkbox"]::after {
+    content: "";
+    width: 0.65rem;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 0.125s transform ease-in-out;
+    box-shadow: inset 1rem 1rem black;
+
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox-item>input[type="checkbox"]:checked::after {
+    transform: scale(1);
+}
