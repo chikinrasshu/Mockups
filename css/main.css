@@ -23,6 +23,17 @@
 
     --border-color: rgba(0, 0, 0, 0.5);
     --table-accent: rgba(156, 195, 240, 0.125);
+    --table-green: rgba(139, 218, 150, 0.25);
+    --table-green-accent: rgba(100, 206, 114, 0.25);
+    --table-red: rgba(218, 139, 139, 0.25);
+    --table-red-accent: rgba(206, 100, 100, 0.25);
+
+    --btn-red-bgcolor: rgb(236, 84, 104);
+    --btn-red-fgcolor: rgb(238, 174, 183);
+    --btn-red-bgcolor-light: rgb(240, 110, 127);
+    --btn-red-fgcolor-light: rgb(231, 202, 206);
+    --btn-red-bgcolor-dark: rgb(196, 46, 66);
+    --btn-red-fgcolor-dark: rgb(194, 157, 162);
 }
 
 body {
@@ -69,6 +80,7 @@ body {
 }
 
 .window {
+    position: relative;
     border: 0.125rem solid var(--border-color);
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.125);

@@ -259,3 +259,39 @@ form tr:last-child td {
 form tr:nth-child(even) {
     background-color: var(--table-accent, rgba(156, 195, 240, 0.125));
 }
+
+form td:has(a) {
+    background-color: var(--table-green);
+}
+
+form td:has(a):nth-child(even) {
+    background-color: var(--table-green-accent);
+}
+
+form td.late {
+    background-color: var(--table-red);
+}
+
+form td.late:nth-child(even) {
+    background-color: var(--table-red-accent);
+}
+
+.close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0 !important;
+    border-bottom-left-radius: 0.5rem !important;
+    background-color: var(--btn-red-bgcolor) !important;
+    color: var(--btn-red-fgcolor) !important;
+}
+
+.close-btn:hover {
+    background-color: var(--btn-red-bgcolor-light) !important;
+    color: var(--btn-red-fgcolor-light) !important;
+}
+
+.close-btn:active {
+    background-color: var(--btn-red-bgcolor-dark) !important;
+    color: var(--btn-red-fgcolor-dark) !important;
+}
