@@ -14,7 +14,7 @@ form {
     justify-content: center;
     align-items: center;
 
-    border: 0.125rem solid black;
+    border: 0.125rem solid var(--border-color);
     border-radius: 1rem;
     width: 30rem;
     margin: 0.5rem;
@@ -74,9 +74,19 @@ form button {
     display: flex;
     padding: 0.5rem;
     border: none;
-    border-bottom: 0.125rem solid black;
     border-radius: 0.25rem;
+
+    background-color: var(--main-bgcolor);
+    color: var(--main-fgcolor);
+    box-shadow: 0 0 0 var(--border-color), 0 0 0 transparent inset, 0 0 0 transparent;
+
+    transition:
+        background-color 0.25s ease-in-out,
+        color 0.25s ease-in-out,
+        transform 0.25s ease-in-out,
+        box-shadow 0.25s ease-in-out;
 }
+
 
 form>button:last-child {
     display: flex;
@@ -94,26 +104,20 @@ form>button:last-child {
     background-color: var(--nav-back-bgcolor);
     color: var(--nav-back-fgcolor);
 
-    box-shadow: 0 0 0 black, 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
-
-    transition:
-        background-color 0.25s ease-in-out,
-        color 0.25s ease-in-out,
-        transform 0.25s ease-in-out,
-        box-shadow 0.25s ease-in-out;
+    box-shadow: 0 0 0 var(--border-color), 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
 }
 
-form>button:last-child:hover {
+form button:hover {
     background-color: var(--nav-back-bgcolor-light);
     color: var(--nav-back-fgcolor-light);
-    box-shadow: 0 0.125rem 0 black, 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.125rem 0 var(--border-color), 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.25);
     transform: translateY(-0.125rem);
 }
 
-form>button:last-child:active {
+form button:active {
     background-color: var(--nav-back-bgcolor-dark);
     color: var(--nav-back-fgcolor-dark);
-    box-shadow: 0 0 0 black, 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.125);
+    box-shadow: 0 0 0 var(--border-color), 0 0 0 transparent inset, 0 -0.25rem 2rem rgba(0, 0, 0, 0.125);
     transform: translateY(0);
 }
 
@@ -168,7 +172,7 @@ form button:has(a) {
     padding: 0.5rem;
     padding-top: 1rem;
 
-    box-shadow: 0 0.125rem 0 black inset, 0 0 1rem rgba(0, 0, 0, 0.125) inset;
+    box-shadow: 0 0.125rem 0 var(--border-color) inset, 0 0 1rem rgba(0, 0, 0, 0.125) inset;
 }
 
 .checkbox-item, .checkbox-item>span {
@@ -189,7 +193,7 @@ form button:has(a) {
     place-content: center;
     margin-right: 0.5rem;
 
-    box-shadow: 0 0.125rem 0 black inset, 0 0 1rem rgba(0, 0, 0, 0.125) inset;
+    box-shadow: 0 0.125rem 0 var(--border-color) inset, 0 0 1rem rgba(0, 0, 0, 0.125) inset;
     background-color: var(--main-bgcolor);
     color: var(--main-fgcolor);
 
@@ -211,7 +215,7 @@ form button:has(a) {
     height: 0.65em;
     transform: scale(0);
     transition: 0.125s transform ease-in-out;
-    box-shadow: inset 1rem 1rem black;
+    box-shadow: inset 1rem 1rem var(--border-color);
 
     transform-origin: bottom left;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
@@ -219,4 +223,39 @@ form button:has(a) {
 
 .checkbox-item>input[type="checkbox"]:checked::after {
     transform: scale(1);
+}
+
+
+form table {
+    width: 100%;
+    border-collapse: collapse;
+    align-self: center;
+    justify-self: center;
+}
+
+form td, form th {
+    flex: 1;
+    border: 0.125rem solid var(--border-color);
+    text-align: left;
+    padding: 8px;
+}
+
+form td:first-child, th:first-child {
+    border-left: none;
+}
+
+form td:last-child, th:last-child {
+    border-right: none;
+}
+
+form tr:first-child th {
+    border-top: none;
+}
+
+form tr:last-child td {
+    border-bottom: none;
+}
+
+form tr:nth-child(even) {
+    background-color: var(--table-accent, rgba(156, 195, 240, 0.125));
 }

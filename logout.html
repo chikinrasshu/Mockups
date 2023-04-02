@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="red">
-    <title>Inicio de Sesion</title>
+    <title>Cerrar Sesion</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/form.css">
     <script type="text/javascript" src="js/chk.js" defer></script>
@@ -51,32 +51,28 @@
     <!-- End of Nav Bar -->
 
     <main>
-        <!-- Login Form -->
+        <!-- Logout Form -->
         <form class="center" novalidate>
-            <h2>Inicio de Sesion</h2>
+            <h2>Cerrar Sesion</h2>
             <div class="shadow"></div>
 
-            <div class="item">
-                <input type="text" id="user" required="required">
-                <label for="user">Nombre de Usuario</label>
+            <label>Desea cerrar sesion?</label>
+            <br>
+
+            <div class="item group">
+                <button><a href="index.html">Si</a></button>
+                <button><a href="#" class="go-back">No</a></button>
             </div>
-            <div class="item">
-                <input type="password" id="pass1" required="required">
-                <label for="pass1">Contraseña</label>
-            </div>
+            <br>
 
             <div class="item">
                 <label class="checkbox-item">
-                    <input type="checkbox" checked="checked">
-                    Recuerdame
+                    <input type="checkbox">
+                    No preguntar denuevo
                 </label>
             </div>
-
-            <img src="img/captcha.jpg">
-
-            <button type="submit">Iniciar Sesion</button>
         </form>
-        <!-- End of Login Form -->
+        <!-- End of Logout Form -->
     </main>
 
     <!-- Footer -->

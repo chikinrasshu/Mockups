@@ -19,4 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleUserMenu(menu, submenu);
         });
     });
+
+    // Go back links
+    let backs = document.querySelectorAll('.go-back');
+    backs.forEach(e => {
+        e.setAttribute("href", document.referrer);
+        e.onclick = function () {
+            history.back();
+            return false;
+        };
+    });
+
 });

@@ -20,6 +20,9 @@
 
     --main-bgcolor-red: rgb(224, 55, 78);
     --main-fgcolor-red: rgb(226, 106, 106);
+
+    --border-color: rgba(0, 0, 0, 0.5);
+    --table-accent: rgba(156, 195, 240, 0.125);
 }
 
 body {
@@ -51,6 +54,28 @@ body {
     margin-right: auto;
 }
 
+.wide {
+    width: 80%;
+}
+
+@media screen and (max-width: 1366px) {
+    .wide {
+        width: 95%;
+    }
+}
+
+.vert {
+    flex-direction: column;
+}
+
+.window {
+    border: 0.125rem solid var(--border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.125);
+    padding: 0.5rem;
+    overflow-x: auto;
+}
+
 .shadow {
     border: none;
     height: 2rem;
@@ -67,7 +92,7 @@ header {
     margin: 0;
     padding: 0;
 
-    box-shadow: 0 0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.125rem 0 var(--border-color), 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
     background-color: var(--nav-back-bgcolor);
     color: var(--nav-back-fgcolor);
 
@@ -162,7 +187,7 @@ header nav .menu ul li {
 header nav .menu ul li:hover {
     box-shadow:
         0 0 0 transparent inset,
-        0 0.125rem 0 black,
+        0 0.125rem 0 var(--border-color),
         0 0.125rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
     background-color: var(--nav-back-bgcolor-light);
     color: var(--nav-back-fgcolor-light);
@@ -176,6 +201,15 @@ header nav .menu ul li:active {
         0 0 0 transparent,
         0 0 0 transparent;
     transform: translateY(0);
+}
+
+header nav .menu ul li:has(a) {
+    padding: 0;
+}
+
+header nav .menu ul li>a {
+    display: block;
+    padding: 0.5rem;
 }
 
 header nav .menu ul li:first-child {
@@ -224,7 +258,7 @@ header nav .user-menu>button>img {
 }
 
 header nav .user-menu.shown>*>img, header nav .user-menu:hover>*>img {
-    border: 0.0625rem solid black;
+    border: 0.0625rem solid var(--border-color);
 }
 
 header nav .user-menu>ul {
@@ -258,7 +292,7 @@ header nav .user-menu>ul {
 header nav .user-menu ul.shown {
     display: flex;
 
-    box-shadow: 0 0.125rem 0 black, 0rem 0.75rem 1rem -0.5rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.125rem 0 var(--border-color), 0rem 0.75rem 1rem -0.5rem rgba(0, 0, 0, 0.25);
     transform: scaleY(100%);
     opacity: 1;
 
@@ -286,7 +320,7 @@ header nav .user-menu ul li:hover {
     color: var(--nav-back-fgcolor);
     box-shadow:
         0 0 0 transparent inset,
-        0 0.125rem 0 black,
+        0 0.125rem 0 var(--border-color),
         0 0.125rem 2rem -0.5rem rgba(0, 0, 0, 0.25);
     transform: translateY(-0.125rem);
 }
@@ -298,6 +332,15 @@ header nav .user-menu ul li:active {
         0 0 0 transparent,
         0 0 0 transparent;
     transform: translateY(0);
+}
+
+header nav .user-menu ul li:has(a) {
+    padding: 0;
+}
+
+header nav .user-menu ul li>a {
+    display: block;
+    padding: 0.5rem;
 }
 
 header nav .user-menu ul li:first-child {
@@ -319,10 +362,15 @@ main {
     width: 80%;
     padding: 0.5rem;
 
-    box-shadow: -0.125rem 0 0 black, 0.125rem 0 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
+    box-shadow: -0.125rem 0 0 var(--border-color), 0.125rem 0 0 var(--border-color), 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
     background-color: var(--main-bgcolor);
+    color: var(--main-fgcolor);
 
     overflow-y: auto;
+}
+
+main>h1:first-child {
+    text-align: center;
 }
 
 /* Footer */
@@ -333,7 +381,9 @@ footer {
     padding: 0.25rem;
     text-align: center;
 
-    box-shadow: 0 -0.125rem 0 black, 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 -0.125rem 0 var(--border-color), 0rem 0rem 1rem 0.25rem rgba(0, 0, 0, 0.25);
     background-color: var(--nav-back-bgcolor);
     color: var(--nav-back-fgcolor);
+
+    z-index: 1;
 }
