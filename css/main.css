@@ -22,6 +22,7 @@
     --main-fgcolor-red: rgb(226, 106, 106);
 
     --border-color: rgba(0, 0, 0, 0.5);
+    --table-accent: rgba(156, 195, 240, 0.125);
 }
 
 body {
@@ -57,6 +58,12 @@ body {
     width: 80%;
 }
 
+@media screen and (max-width: 1366px) {
+    .wide {
+        width: 95%;
+    }
+}
+
 .vert {
     flex-direction: column;
 }
@@ -66,6 +73,7 @@ body {
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.125);
     padding: 0.5rem;
+    overflow-x: auto;
 }
 
 .shadow {
@@ -195,6 +203,15 @@ header nav .menu ul li:active {
     transform: translateY(0);
 }
 
+header nav .menu ul li:has(a) {
+    padding: 0;
+}
+
+header nav .menu ul li>a {
+    display: block;
+    padding: 0.5rem;
+}
+
 header nav .menu ul li:first-child {
     margin-left: 0;
 }
@@ -315,6 +332,15 @@ header nav .user-menu ul li:active {
         0 0 0 transparent,
         0 0 0 transparent;
     transform: translateY(0);
+}
+
+header nav .user-menu ul li:has(a) {
+    padding: 0;
+}
+
+header nav .user-menu ul li>a {
+    display: block;
+    padding: 0.5rem;
 }
 
 header nav .user-menu ul li:first-child {

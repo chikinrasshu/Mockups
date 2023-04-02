@@ -224,3 +224,38 @@ form button:has(a) {
 .checkbox-item>input[type="checkbox"]:checked::after {
     transform: scale(1);
 }
+
+
+form table {
+    width: 100%;
+    border-collapse: collapse;
+    align-self: center;
+    justify-self: center;
+}
+
+form td, form th {
+    flex: 1;
+    border: 0.125rem solid var(--border-color);
+    text-align: left;
+    padding: 8px;
+}
+
+form td:first-child, th:first-child {
+    border-left: none;
+}
+
+form td:last-child, th:last-child {
+    border-right: none;
+}
+
+form tr:first-child th {
+    border-top: none;
+}
+
+form tr:last-child td {
+    border-bottom: none;
+}
+
+form tr:nth-child(even) {
+    background-color: var(--table-accent, rgba(156, 195, 240, 0.125));
+}
