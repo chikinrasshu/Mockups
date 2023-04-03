@@ -76,6 +76,16 @@
 </p>
 <br/>
 
+<p align="center">
+    <img src="img/Ss/w8.png">
+</p>
+<br/>
+
+<p align="center">
+    <img src="img/Ss/w9.png">
+</p>
+<br/>
+
 
 <a class="url" href="https://app.uizard.io/p/80e8dc77"> Link wireframes Interactivo</a>
 <br/>
@@ -88,3 +98,4 @@
 <p align="center">
     <img src="img/Ss/login.png">
 </p>
+<br/>
