@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="red">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/form.css">
+    <script type="text/javascript" src="js/chk.js" defer></script>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Logo -->
+                <li class="logo">
+                    <a href="index.html"><img src="img/logo.svg" />SimplyTask!</a>
+                </li>
+                <!-- End of Logo -->
+
+                <!-- Menu -->
+                <li class="menu">
+                    <ul>
+                        <li><a href="mostrarTareas.html">Tareas</a></li>
+                        <li><a href="mostrarProgreso.html">Progreso</a></li>
+                        <li><a href="mostrarHorario.html">Horario</a></li>
+                        <li><a href="mostrarNotificaciones.html">Notificaciones</a></li>
+                    </ul>
+                </li>
+                <!-- End of Menu -->
+
+                <!-- User Menu -->
+                <li class="user-menu">
+                    <button>Username <img src="img/user_placeholder.svg" /></button>
+                    <ul>
+                        <li><a href="perfil.html">Perfil</a></li>
+                        <li><a href="ajustes.html">Ajustes</a></li>
+                        <li><a href="ayuda.html">Ayuda</a></li>
+                        <li><a href="logout.html">Cerrar Sesion</a></li>
+                    </ul>
+                </li>
+                <!-- End of User Menu -->
+            </ul>
+        </nav>
+    </header>
+    <!-- End of Nav Bar -->
+
+    <main>
+        <!-- Add Form -->
+        <form class="center" novalidate>
+            <h2>Editar Perfil</h2>
+            <div class="shadow"></div>
+
+            <div class="window">
+                <div class="item">
+                    <img class="center user-profile" src="img/user_placeholder.svg" />
+                </div>
+                <br>
+                <div class="item">
+                    <button><a href="#">Editar Imagen de Perfil</a></button>
+                </div>
+            </div>
+
+            <div class="item">
+                <input type="text" id="user" required="required">
+                <label for="user">Nombre</label>
+            </div>
+
+            <div class="item">
+                <input type="text" id="email" required="required">
+                <label for="user">Email</label>
+            </div>
+
+            <span>Fecha de Nacimiento</span>
+            <div class="group group-3">
+                <div class="item">
+                    <input type="text" id="date-day1" required="required">
+                    <label for="date-day1">Dia</label>
+                </div>
+
+                <div class="item">
+                    <input type="text" id="date-month1" required="required">
+                    <label for="date-month1">Mes</label>
+                </div>
+
+                <div class="item">
+                    <input type="text" id="date-year1" required="required">
+                    <label for="date-year1">A&ntilde;o</label>
+                </div>
+            </div>
+
+            <div class="item">
+                <textarea id="desc" name="desc" rows="5" required="required"></textarea>
+                <label for="desc">Descripci&oacute;n / Bio</label>
+            </div>
+
+            <div class="item">
+                <label class="checkbox-item">
+                    <input type="checkbox" id="notify-before" checked="checked">
+                    <span>Recibir Notificaciones</span>
+                </label>
+            </div>
+            <div class="item">
+                <label class="checkbox-item">
+                    <input type="checkbox" id="is-important" checked="checked">
+                    <span>Recibir Correos</span>
+                </label>
+            </div>
+
+            <button type="submit">Guardar Cambios</button>
+        </form>
+        <!-- End of Add Form -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; chk 2023. All rights reserved.
+    </footer>
+    <!-- End of Footer -->
+</body>
+
+</html>
