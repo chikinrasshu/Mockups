@@ -89,7 +89,7 @@
         </nav>
     </header>
 
-    <main id="page-content" class="container text-center">
+    <main id="page-content" class="container">
         <!-- Generic Form -->
         <div class="container py-5 h-100">
             <div class="row justify-content-center align-items-center h-100">
@@ -100,19 +100,27 @@
                             <hr class="mb-md-5">
 
                             <!-- Registration Form -->
-                            <form>
+                            <form action="" class="needs-validation" novalidate>
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label" for="user">Nombre de Usuario</label>
-                                            <input type="text" id="user" class="form-control form-control-lg" />
+                                            <input type="text" id="user" class="form-control form-control-lg"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                Ingrese un nombre de usuario v&aacute;lido.
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label" for="email">Email</label>
-                                            <input type="email" id="email" class="form-control form-control-lg" />
+                                            <input type="email" id="email" class="form-control form-control-lg"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                Ingrese un e-mail v&aacute;lido.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -121,33 +129,45 @@
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label" for="pass1">Contrase&ntilde;a</label>
-                                            <input type="password" id="pass1" class="form-control form-control-lg" />
+                                            <input type="password" id="pass1" class="form-control form-control-lg"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                Ingrese una contrase&ntilde;a v&aacute;lida.
+                                            </div>
                                         </div>
                                     </div>
 
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label" for="pass2">Repetir Contrase&ntilde;a</label>
-                                            <input type="password" id="pass2" class="form-control form-control-lg" />
+                                            <input type="password" id="pass2" class="form-control form-control-lg"
+                                                required />
+                                            <div class="invalid-feedback">
+                                                Ingrese una contrase&ntilde;a v&aacute;lida.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-check d-flex justify-content-center mb-5">
-                                    <input class="form-check-input me-2" type="checkbox" value="" id="tyc" />
+                                <div class="form-check mb-5">
+                                    <input class="form-check-input" type="checkbox" value="" id="tyc" required />
                                     <label class="form-check-label" for="tyc">
                                         Acepto los <a href="https://google.com">Terminos y Condiciones</a>
                                     </label>
+                                    <div class="invalid-feedback">
+                                        Debes aceptar los Terminos y Condiciones antes de registrar una cuenta en
+                                        SimplyTask.
+                                    </div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row text-center">
                                     <div class="col-md-12 mb-4">
                                         <img src="img/captcha.png">
                                     </div>
                                 </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <button type="button" class="btn btn-success btn-lg w-100">Registrar
+                                    <button class="btn btn-success btn-lg w-100" type="submit">Registrar
                                         Cuenta</button>
                                 </div>
                             </form>
