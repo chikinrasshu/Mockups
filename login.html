@@ -29,9 +29,38 @@
 </head>
 
 <body class="d-flex flex-column">
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cerrar Sesi&oacute;n</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Desea cerrar sesi&oacute;n?</p>
+
+                    <div class="col-12">
+                        <div class="form-check text-start">
+                            <input class="form-check-input" type="checkbox" id="logoutNeverShowAgain">
+                            <label class="form-check-label" for="logoutNeverShowAgain">
+                                No volver a mostrar.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn btn-secondary" href="/index.html">S&iacute;</a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No, volver
+                        atr&aacute;s</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Nav Bar -->
-    <header class="sticky-top mb-3">
-        <nav class="navbar navbar-expand-md justify-content-center bg-primary shadow-sm">
+    <header class="sticky-top mb-3 shadow">
+        <nav class="navbar navbar-expand-md justify-content-center bg-primary">
             <div class="container">
                 <!-- Logo and Toggler -->
                 <a class="navbar-brand d-flex w-50 me-auto" href="/index.html">
@@ -78,7 +107,9 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="logout.html">Cerrar Sesion</a></li>
+                                <li><a class="dropdown-item" href="" data-bs-toggle="modal"
+                                        data-bs-target="#logoutModal">Cerrar
+                                        Sesion</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -88,6 +119,7 @@
             </div>
         </nav>
     </header>
+    <!-- End of Nav Bar -->
 
     <main id="page-content" class="container">
         <!-- Generic Form -->
